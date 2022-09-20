@@ -18,7 +18,13 @@
 
 <script>
 import RewardCard from '@/components/rewards/RewardCard.vue'
+import { useRewardStore } from '@/stores/reward.js'
+
 export default {
+  setup() {
+    const reward_store = useRewardStore()
+    return { reward_store }
+  },
   data() {
     return {
       title: "Rewards",
@@ -39,14 +45,12 @@ export default {
   async mounted() {
     try {
       this.error = null
-      const response = await this.$axios.get('/rewards');
-      this.rewards = response.data.data
+      await this.reward_store.fetch()
+      this.rewards = this.reward_store.sortByPoint
     } catch(error) {
       console.log(error)
       this.error = error.message
-    }
-    
-    
+    }  
   }
 }
 </script>
