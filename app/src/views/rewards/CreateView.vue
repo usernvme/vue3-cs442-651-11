@@ -63,6 +63,7 @@ export default {
   methods: {
     async saveNewReward() {
       try {
+        this.error = null
         const reward_id = await this.reward_store.add(this.reward)
         if (reward_id) {
           this.$router.push(`/rewards/${reward_id}`)
@@ -74,4 +75,5 @@ export default {
     }
   }
 }
+
 </script>

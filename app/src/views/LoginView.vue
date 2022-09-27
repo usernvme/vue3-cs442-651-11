@@ -1,7 +1,7 @@
 <template>
   <div class="m-8">
     <h1 class="text-3xl">Login</h1>
-
+  
     <div v-if="error">
       {{ error }}
     </div>
@@ -16,7 +16,7 @@
         <label>Password</label>
         <input type="password" v-model="password" required>
       </div>
-
+    
       <button type="submit" :disabled="disabledButton"
         class="p-2 border rounded-lg"
         :class="disabledButton ? 'bg-gray-400': 'bg-green-400' "
@@ -33,6 +33,7 @@
 
 <script>
 import { useAuthStore } from '@/stores/auth.js'
+
 export default {
   setup() {
     const auth_store = useAuthStore()

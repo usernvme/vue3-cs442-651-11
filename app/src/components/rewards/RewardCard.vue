@@ -10,7 +10,7 @@
     <div class="">
       <slot></slot>
     </div>
-    
+
     <div class="grid grid-cols-2">
       <button @click="onClickButton()"
       class="p-2 mx-4 bg-blue-200 border-2 border-blue-400 rounded-xl">
@@ -34,11 +34,9 @@
 
 <script>
 import { useCounterStore } from '@/stores/counter.js'
-
 export default {
   setup() {
     const counter_store = useCounterStore()
-    
     return { counter_store }
   },
   data() {
@@ -57,7 +55,7 @@ export default {
     onClickLike() {
       this.likeCount++;
     },
-    onClickCounter()  {
+    onClickCounter() {
       this.counter_store.increment()
     },
     onClickButton() {

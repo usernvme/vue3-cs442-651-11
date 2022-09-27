@@ -10,6 +10,7 @@ import Profile from '@/components/profile/Profile.vue'
 
     <div class="wrapper">
       <HelloWorld msg="You did it!" />
+      
 
       <nav class="flex">
         <RouterLink to="/">Home</RouterLink>
@@ -68,7 +69,7 @@ nav a:first-of-type {
 
   .logo {
     margin: 0 2rem 0 0;
-    display: block;
+    display: block
   }
 
   nav {

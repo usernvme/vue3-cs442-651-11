@@ -4,6 +4,7 @@
 
 <script>
 import { useAuthStore } from '@/stores/auth.js'
+
 export default {
   setup() {
     const auth_store = useAuthStore()
@@ -12,6 +13,7 @@ export default {
   mounted() {
     this.auth_store.logout()
     this.$router.push('/')
+
   }  
 }
 </script>
